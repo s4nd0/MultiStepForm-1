@@ -21,7 +21,7 @@ const Addons = ({
 
       <div className="flex flex-col gap-3 sm:flex-row my-6">
         <div
-          className={`flex flex-row justify-between items-center px-4 py-4 border border-Light-gray rounded-lg ${
+          className={`flex flex-row justify-between items-center px-4 py-4 border border-Light-gray rounded-lg cursor-pointer ${
             onlineService
               ? "border-Purplish-blue bg-Magnolia-1"
               : "border-Light-gray"
@@ -48,7 +48,7 @@ const Addons = ({
           </p>
         </div>
         <div
-          className={`flex flex-row justify-between items-center px-4 py-4 border border-Light-gray rounded-lg ${
+          className={`flex flex-row justify-between items-center px-4 py-4 border border-Light-gray rounded-lg cursor-pointer ${
             largerStorage
               ? "border-Purplish-blue bg-Magnolia-1"
               : "border-Light-gray"
@@ -73,7 +73,7 @@ const Addons = ({
           </p>
         </div>
         <div
-          className={`flex flex-row justify-between items-center px-4 py-4 border border-Light-gray rounded-lg ${
+          className={`flex flex-row justify-between items-center px-4 py-4 border border-Light-gray rounded-lg cursor-pointer ${
             customizableProfile
               ? "border-Purplish-blue bg-Magnolia-1"
               : "border-Light-gray"

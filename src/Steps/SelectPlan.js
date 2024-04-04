@@ -34,7 +34,7 @@ const SelectPlan = ({
       <div className="flex flex-col gap-3 sm:flex-row my-6">
         <div
           onClick={() => handleSelect(1)}
-          className={`flex flex-row items-start sm:flex-col gap-4 px-4 py-3 border rounded-lg ${
+          className={`flex flex-row items-start sm:flex-col gap-4 px-4 py-3 border rounded-lg cursor-pointer ${
             selectedPlan === 1
               ? "border-Purplish-blue bg-Magnolia-1"
               : "bg-White border-Light-gray"
@@ -53,7 +53,7 @@ const SelectPlan = ({
         </div>
         <div
           onClick={() => handleSelect(2)}
-          className={`flex flex-row items-start sm:flex-col gap-4 px-4 py-3 border rounded-lg ${
+          className={`flex flex-row items-start sm:flex-col gap-4 px-4 py-3 border rounded-lg cursor-pointer ${
             selectedPlan === 2
               ? "border-Purplish-blue bg-Magnolia-1"
               : "bg-White border-Light-gray"
@@ -72,7 +72,7 @@ const SelectPlan = ({
         </div>
         <div
           onClick={() => handleSelect(3)}
-          className={`flex flex-row items-start sm:flex-col gap-4 px-4 py-3 border rounded-lg ${
+          className={`flex flex-row items-start sm:flex-col gap-4 px-4 py-3 border rounded-lg cursor-pointer ${
             selectedPlan === 3
               ? "border-Purplish-blue bg-Magnolia-1"
               : "bg-White border-Light-gray"
@@ -102,7 +102,7 @@ const SelectPlan = ({
         <label className="switch mx-6">
           <input
             type="checkbox"
-            onClick={handleIsMonthly}
+            onChange={handleIsMonthly}
             checked={!isMonthly}
           />
           <span className="slider round"></span>

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Footer = ({ step, setStep }) => {
+const Footer = ({ step, setStep, setConfirmed }) => {
   const handleIncreaseStep = () => {
     if (step < 4) setStep((previousStep) => (previousStep = previousStep + 1));
   };
@@ -11,7 +11,7 @@ const Footer = ({ step, setStep }) => {
 
   const handleConfirm = () => {
     if (step === 4) {
-      // confirm
+      setConfirmed(true);
     }
   };
 
