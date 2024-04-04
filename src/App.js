@@ -7,6 +7,8 @@ import StepsMobile from "./Components/StepsMobile";
 // steps components
 import PersonalInfo from "./Steps/PersonalInfo";
 import SelectPlan from "./Steps/SelectPlan";
+import Addons from "./Steps/Addons";
+import Finish from "./Steps/Finish";
 
 function App() {
   const [step, setStep] = useState(1);
@@ -18,6 +20,9 @@ function App() {
   const [selectedPlan, setSelectedPlan] = useState(1);
 
   // step 3
+  const [onlineService, setOnlineService] = useState(false);
+  const [largerStorage, setLargerStorage] = useState(false);
+  const [customizableProfile, setCustomizableProfile] = useState(false);
 
   // step 4
 
@@ -37,6 +42,18 @@ function App() {
               setSelectedPlan={setSelectedPlan}
             />
           )}
+          {step === 3 && (
+            <Addons
+              isMonthly={isMonthly}
+              onlineService={onlineService}
+              setOnlineService={setOnlineService}
+              largerStorage={largerStorage}
+              setLargerStorage={setLargerStorage}
+              customizableProfile={customizableProfile}
+              setCustomizableProfile={setCustomizableProfile}
+            />
+          )}
+          {step === 4 && <Finish />}
         </div>
       </main>
       <footer className="visible sm:hidden">

@@ -100,7 +100,11 @@ const SelectPlan = ({
           Monthly
         </p>
         <label className="switch mx-6">
-          <input type="checkbox" onClick={handleIsMonthly} />
+          <input
+            type="checkbox"
+            onClick={handleIsMonthly}
+            checked={!isMonthly}
+          />
           <span className="slider round"></span>
         </label>
         <p
