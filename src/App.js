@@ -53,7 +53,16 @@ function App() {
               setCustomizableProfile={setCustomizableProfile}
             />
           )}
-          {step === 4 && <Finish />}
+          {step === 4 && (
+            <Finish
+              setStep={setStep}
+              isMonthly={isMonthly}
+              selectedPlan={selectedPlan}
+              onlineService={onlineService}
+              largerStorage={largerStorage}
+              customizableProfile={customizableProfile}
+            />
+          )}
         </div>
       </main>
       <footer className="visible sm:hidden">
