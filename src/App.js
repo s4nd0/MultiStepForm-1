@@ -10,6 +10,7 @@ import SelectPlan from "./Steps/SelectPlan";
 import Addons from "./Steps/Addons";
 import Finish from "./Steps/Finish";
 import Confirmation from "./Steps/Confirmation";
+import StepsDesktop from "./Components/StepsDesktop";
 
 function App() {
   const [step, setStep] = useState(1);
@@ -46,50 +47,64 @@ function App() {
       <header className="visible sm:hidden h-40 bg-cover">
         <StepsMobile step={step} />
       </header>
-      <main className="flex-1">
-        <div className="bg-White shadow-lg rounded-md px-6 py-8 mx-4 -mt-16">
-          {step === 1 && (
-            <PersonalInfo
-              name={name}
-              setName={setName}
-              email={email}
-              setEmail={setEmail}
-              phone={phone}
-              setPhone={setPhone}
-              error={error}
-              setError={setError}
-            />
-          )}
-          {step === 2 && (
-            <SelectPlan
-              isMonthly={isMonthly}
-              setIsMonthly={setIsMonthly}
-              selectedPlan={selectedPlan}
-              setSelectedPlan={setSelectedPlan}
-            />
-          )}
-          {step === 3 && (
-            <Addons
-              isMonthly={isMonthly}
-              onlineService={onlineService}
-              setOnlineService={setOnlineService}
-              largerStorage={largerStorage}
-              setLargerStorage={setLargerStorage}
-              customizableProfile={customizableProfile}
-              setCustomizableProfile={setCustomizableProfile}
-            />
-          )}
-          {step === 4 && !confirmed && (
-            <Finish
-              setStep={setStep}
-              isMonthly={isMonthly}
-              selectedPlan={selectedPlan}
-              onlineService={onlineService}
-              largerStorage={largerStorage}
-              customizableProfile={customizableProfile}
-            />
-          )}
-          {confirmed && <Confirmation />}
+      <main className="flex-1 sm:flex sm:items-center sm:justify-center">
+        <div className="bg-White shadow-lg rounded-md px-6 py-6 mx-4 -mt-16 sm:h-[600px] sm:grid sm:grid-cols-[3fr_5fr]">
+          <div className="desktop-bg bg-cover p-4 hidden sm:block">
+            <StepsDesktop step={step} />
+          </div>
+          <div className="block sm:flex flex-col justify-between sm:p-6">
+            {step === 1 && (
+              <PersonalInfo
+                name={name}
+                setName={setName}
+                email={email}
+                setEmail={setEmail}
+                phone={phone}
+                setPhone={setPhone}
+                error={error}
+                setError={setError}
+              />
+            )}
+            {step === 2 && (
+              <SelectPlan
+                isMonthly={isMonthly}
+                setIsMonthly={setIsMonthly}
+                selectedPlan={selectedPlan}
+                setSelectedPlan={setSelectedPlan}
+              />
+            )}
+            {step === 3 && (
+              <Addons
+                isMonthly={isMonthly}
+                onlineService={onlineService}
+                setOnlineService={setOnlineService}
+                largerStorage={largerStorage}
+                setLargerStorage={setLargerStorage}
+                customizableProfile={customizableProfile}
+                setCustomizableProfile={setCustomizableProfile}
+              />
+            )}
+            {step === 4 && !confirmed && (
+              <Finish
+                setStep={setStep}
+                isMonthly={isMonthly}
+                selectedPlan={selectedPlan}
+                onlineService={onlineService}
+                largerStorage={largerStorage}
+                customizableProfile={customizableProfile}
+              />
+            )}
+            <div className="hidden sm:block">
+              {!confirmed && (
+                <Footer
+                  step={step}
+                  setStep={setStep}
+                  setConfirmed={setConfirmed}
+                />
+              )}
+            </div>
+            {confirmed && <Confirmation />}
+          </div>
         </div>
       </main>
       {!confirmed && (
